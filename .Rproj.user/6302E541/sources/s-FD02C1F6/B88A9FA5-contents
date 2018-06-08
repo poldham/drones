@@ -1,0 +1,53 @@
+#' @name ipsa_mnis
+#' @aliases ipsa_mnis
+#' @title The ipsa mnis concordance table
+#' @description A concordance table between the UK Independent Parliamentary Standards Authority (IPSA) and the UK data.parliament Members Name Information Service (MNIS)
+#' @usage  data("ipsa_mnis")
+#' @format
+#'  A data frame with 950 observations on the following 28 variables.
+#' \describe{
+#' \item{\code{member_id}}{a character vector}
+#' \item{\code{dods_id}}{a character vector}
+#' \item{\code{pims_id}}{a character vector}
+#' \item{\code{clerks_id}}{a character vector}
+#' \item{\code{display_as}}{a character vector}
+#' \item{\code{list_as}}{a character vector}
+#' \item{\code{full_title}}{a character vector}
+#' \item{\code{laying_minister_name}}{a character vector}
+#' \item{\code{date_of_birth}}{a POSIXct}
+#' \item{\code{date_of_death}}{a POSIXct}
+#' \item{\code{gender}}{a character vector}
+#' \item{\code{house}}{a character vector}
+#' \item{\code{member_from}}{a character vector}
+#' \item{\code{house_start_date}}{a POSIXct}
+#' \item{\code{house_end_date}}{a Date}
+#' \item{\code{party_id}}{a character vector}
+#' \item{\code{party_text}}{a character vector}
+#' \item{\code{current_status_id}}{a character vector}
+#' \item{\code{current_status_is_active}}{a character vector}
+#' \item{\code{current_status_name}}{a character vector}
+#' \item{\code{current_status_reason}}{a character vector}
+#' \item{\code{current_status_start_date}}{a POSIXct}
+#' \item{\code{temp_end}}{a Date}
+#' \item{\code{mnis_short}}{a character vector}
+#' \item{\code{ipsa_match}}{a logical vector}
+#' \item{\code{mps_name}}{a character vector}
+#' \item{\code{mps_constituency}}{a character vector}
+#' \item{\code{current_role}}{a character vector}
+#'}
+#'
+#' @details
+#'  %%  ~~ If necessary, more details than the __description__ above ~~
+#'
+#' @source
+#'  %%  ~~ reference to a publication or URL from which the data were obtained ~~
+#'
+#' @references
+#'  %%  ~~ possibly secondary sources and usages ~~
+#'
+#' @examples
+#'   data(ipsa_mnis)
+  ## maybe str(ipsa_mnis) ; plot(ipsa_mnis) ...
+#'
+#' @keywords datasets
+"ipsa_mnis"

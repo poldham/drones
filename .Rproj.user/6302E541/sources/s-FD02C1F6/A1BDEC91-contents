@@ -1,0 +1,11 @@
+Package: drones
+Type: Package
+Title: A Patent dataset on drone technology
+Version: 0.1.0
+Authors@R: person("Paul", "Oldham", role = c("aut", "cre"), email = "poldham@mac.com")
+Maintainer: Paul Oldham <poldham@mac.com>
+Description: A patent dataset woth 18970 publications on drone technology from Clarivate Analytics Derwent Innovation database
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

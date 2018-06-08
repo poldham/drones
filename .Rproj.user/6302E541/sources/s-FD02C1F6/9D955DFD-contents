@@ -1,0 +1,82 @@
+---
+title: "Untitled"
+author: "Paul Oldham"
+date: "08/06/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Creating Google Cloud Storage in R
+
+Google Cloud provides cheap storage in "buckets". An advantage of these buckets is that they can be accessed and managed directly from R
+
+Here is how I did it
+
+a) Create a Project
+b) Select the API that you will be using (Google Cloud Storage)
+c) Limit the API access to only that service
+d) We need a JSON file with the credentials to automate authentication.
+
+To do that we create a service account and set the Storage role to Admin (or whatever you want)
+
+
+Instructions are here: https://cloud.google.com/storage/docs/authentication
+
+
+Open the list of credentials in the Google Cloud Platform Console.
+OPEN THE LIST OF CREDENTIALS
+
+Click Create credentials.
+Select Service account key.
+A Create service account key window opens.
+
+Click the drop-down box below Service account, then click New service account.
+Enter a name for the service account in Name.
+Choose a Cloud Storage Role that grants the service account the desired level of access.
+Use the default Service account ID or generate a different one.
+Select the Key type: JSON or P12.
+Click Create.
+A Service account created window is displayed and the private key for the Key type you selected is downloaded automatically. If you selected a P12 key, the private key's password ("notasecret") is displayed.
+
+Click Close.
+
+
+### Create a Project
+
+Once you have your Google Cloud account create a project for your storage. Here is a demo of that and it is now deleted. 
+
+Choose the Projects Button at the top of your screen and then create a new project. 
+
+```{r}
+INSERT VIDEO
+```
+
+When the new project has been created (which can take a while) make sure you have a copy of the project ID (I paste mine into a text file). You will see it again later if you miss it here. 
+
+Next, in the side panel go to Cloud Storage. It can be hard to find amid the morass of services. 
+
+Click on that and start the bucket naming challenge. Your bucket name must be unique across the google platform and so it can take a while. 
+
+In this case I ended up with impossiblestorage
+
+Now you are in a position to add some data to your bucket. Here I am adding an Rda file for a new data package on drones that will be too big to pass through CRAN. 
+
+Note that if you want to share the file on the bucket publicly (and we do) then simply click the "share publicly" button and copy the link. You will now be able to use that link for accessing the files in you R package or for sharing with others. 
+
+### Getting Credentials to use in R
+
+This got a bit confusing, so here goes. 
+
+As part of the cloudyr initiative a whole bunch of packages have become available for accessing google cloud and AWS and so on. 
+
+In the case of Google Cloud, Mark Edmonson has done great work in creating the `googleCloudStorageR` and the `googleComputeEngineR` package (among others you will want to look into).
+
+We want to be able to use google cloud storage directly from in R. The first step in that process is to get Credentials. However, there are two options here. 1. Click credentials and you will get an API key OR 2. Create a Service Account it is this second option that you should go for to use with GoogleComputeEngineR. 
+
+
+
+
+

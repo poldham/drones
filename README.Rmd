@@ -1,0 +1,66 @@
+---
+title: "Untitled"
+author: "Paul Oldham"
+date: "08/06/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, cache = TRUE)
+```
+
+# The Drones Patent Dataset
+
+The drones patent dataset is a dataset of 18,970 patent publications that refer to the word drone or drones somewhere in the text. The dataset is based on a search of patent documents from the main patent jurisdictions for the period 1845 to early November 2017 using the Clarivate Analytics Derwent Innovation database. The dataset is intended for use in training in patent analytics as described on the [WIPO analytics](https://github.com/wipo-analytics) home page and is deliberately noisy. While this is live valid data, it is not intended to be used to make definitive statements about patent activity for drone technology and is not expected to be complete. 
+
+The drones dataset is contained in an R package. You can use the drones dataset with or without R. Let's cover both options.
+
+### Install in RStudio
+
+If you are using RStudio then you can import the package from Github as follows. If you need to install RStudio follow the instructions to install R [here](https://cran.rstudio.com/) and RStudio [here](https://www.rstudio.com/products/rstudio/download/)
+
+Make sure you have devtools installed and it is a very good idea to install the tidyverse if you don't have it already.
+
+```{r eval=FALSE}
+install.packages("devtools")
+install.packages("tidyverse")
+```
+
+Next install the drones package. 
+
+```{r eval=FALSE}
+devtools::install_github("wipo-analytics/drones")
+```
+
+```{r}
+library(drones)
+```
+
+### Download
+
+If you want to work outside RStudio you can download the dataset reference file as a zip file containing the data in .csv format [here](https://storage.googleapis.com/owa/drones.zip). The documentation page for each column is available [here]().
+
+### Things you need to know
+
+Patent data is not tidy. Many of the columns contain data that is concatenated (joined) with a semicolon as a delimeter. This means that in order to access the data for counting you will need to separate the data onto the relevant row and you will also need to trim the data. You can do this easily with the tidyverse packages.
+
+```{r eval = FALSE}
+install.packages("tidyverse")
+```
+
+Load the library
+
+```{r}
+library(tidyverse)
+```
+
+Let's separate out the applicant (assignee) field and then count it up:
+
+```{r}
+applicant <- drones %>% 
+  separate_rows(assignee, sep = ";") %>%
+  mutate(assignee = str_trim(.$assignee, side = "both"))
+
+applicant %>% count(assignee, sort = TRUE)
+```
+
