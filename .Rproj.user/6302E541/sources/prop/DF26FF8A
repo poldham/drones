@@ -1,6 +1,7 @@
 {
-    "cursorPosition" : "16,0",
+    "cursorPosition" : "110,601",
+    "ignored_words" : "delimeter,travis,ci,repostatus,yellowgreen,svg,Github,devtools,cpc,deconcatenating\n",
     "last_setup_crc32" : "",
-    "scrollLine" : "3",
+    "scrollLine" : "108",
     "tempName" : "Untitled1"
 }

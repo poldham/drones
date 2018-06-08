@@ -3,7 +3,7 @@
 \docType{data}
 \name{drones}
 \alias{drones}
-\title{The drones patent dataset}
+\title{Access the drones patent dataset}
 \format{{ A data frame with 18,970 observations of 22 variables:
  \describe{
    \item{\code{abstract}}{The original document abstract, 12798 93 percent of documents, a character vector}
@@ -22,8 +22,8 @@
    \item{\code{inpadoc_first_family_member}}{The earliest publication number in the inpadoc_family_members based on the date, 9,020, 98 percent of documents, a character vector}
    \item{\code{inventor}}{The original inventor name, 19630 94 percent of documents, a character vector}
    \item{\code{ipc}}{International Patent Classification - IPC - codes, 8727 98 percent of documents, a character vector}
-   \item{\code{priority_number}}{patent priority numbers in long for with dates, 23382 99 percent of documents, a character vector}
-   \item{\code{publication_number}}{publication numbers in short form minus dates, 18970 100 percent of documents, a character vector}
+   \item{\code{priority_number}}{Patent priority numbers in long format with dates, 23382 99 percent of documents, a character vector}
+   \item{\code{publication_number}}{Publication numbers in short form minus dates, 18970 100 percent of documents, a character vector}
    \item{\code{publication_year}}{The year of publication of the publication numbers, 145 99 percent of documents, a character vector}
    \item{\code{related_application_numbers}}{Details of related patent applications, 7906 38 percent of documents, a character vector}
    \item{\code{title_english}}{The english title, 11113 99 percent of documents, a character vector}

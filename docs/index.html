@@ -78,8 +78,8 @@
 <div id="the-drones-patent-dataset" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#the-drones-patent-dataset" class="anchor"></a>The Drones Patent Dataset</h1></div>
-<p>The drones patent dataset is a dataset of 18,970 patent publications that refer to the word drone or drones somewhere in the text. The dataset is based on a search of patent documents from the main patent jurisdictions for the period 1845 to early November 2017 using the Clarivate Analytics Derwent Innovation database. The dataset is intended for use in training in patent analytics as described on the <a href="https://github.com/wipo-analytics">WIPO analytics</a> home page and is deliberately noisy. While this is live valid data, it is not intended to be used to make definitive statements about patent activity for drone technology and is not expected to be complete.</p>
-<p>The drones dataset is contained in an R package. You can use the drones dataset with or without R. Let’s cover both options.</p>
+<p>The drones patent dataset is a dataset of 18,970 patent publications that refer to the word drone or drones somewhere in the text. The dataset is based on a search of patent documents from the main patent jurisdictions for the period 1845 to early November 2017 using the <a href="https://clarivate.com/products/derwent-innovation/">Clarivate Analytics Derwent Innovation</a> database. The dataset is intended for use in training in patent analytics as described on the <a href="https://github.com/wipo-analytics">WIPO analytics</a> home page and is deliberately noisy. While this is live valid data, it is not intended to be used to make definitive statements about patent activity for drone technology and is not expected to be complete. The drones patent dataset is part of work in progress on the WIPO Patent Analytics Handbook.</p>
+<p>The drones dataset is contained in an R package but you can use the drones dataset with or without R. Let’s cover both options.</p>
 <div id="install-in-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#install-in-rstudio" class="anchor"></a>Install in RStudio</h3>
@@ -91,10 +91,43 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"wipo-analytics/drones"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(drones)</a></code></pre></div>
 </div>
-<div id="download" class="section level3">
+<div id="download-the-raw-dataset" class="section level3">
 <h3 class="hasAnchor">
-<a href="#download" class="anchor"></a>Download</h3>
-<p>If you want to work outside RStudio you can download the dataset reference file as a zip file containing the data in .csv format <a href="https://storage.googleapis.com/owa/drones.zip">here</a>. The documentation page for each column is available <a href="">here</a>.</p>
+<a href="#download-the-raw-dataset" class="anchor"></a>Download the Raw dataset</h3>
+<p>If you want to work outside RStudio you can download the dataset reference file as a zip file containing the data in .csv format <a href="https://storage.googleapis.com/owa/drones.zip">here</a>.</p>
+</div>
+<div id="what-is-in-the-dataset" class="section level3">
+<h3 class="hasAnchor">
+<a href="#what-is-in-the-dataset" class="anchor"></a>What is in the dataset</h3>
+<p>The dataset is documented inside the R package. If you are not using R it includes the following columns.</p>
+<p>A data frame with 18,970 observations of 22 variables:</p>
+<ul>
+<li><p><code>abstract</code> The original document abstract, 12798 abstract (93% of documents), a character vector</p></li>
+<li><p><code>abstract_english</code> The English document abstract, 12295 English abstracts (94% of documents), a character vector</p></li>
+<li><p><code>application_number</code> The long application number including the date, 15776 numbers (100% of documents), a character vector</p></li>
+<li><p><code>assignee</code> The original applicant or assignee name, 7746 raw names, (89% of documents), a character vector</p></li>
+<li><p><code>cited_nonpatent</code> Literature citations, field is noisy, 29599 references (36% of documents), a character vector</p></li>
+<li><p><code>cited_patents</code> Patents cited in one or more documents, 93769 cited numbers (39% percent of documents), a character vector</p></li>
+<li><p><code>citing_patents</code> Patents citing one or more documents, 79406 citing numbers (39% of documents), a character vector</p></li>
+<li><p><code>cpc</code> The Cooperative Patent Classification Codes, 17077 cpc codes (93% of documents), a character vector</p></li>
+<li><p><code>dwpi_family_dates</code> Family dates for DWPI family numbers (Derwent World Patent Index), 5154 dates (94% of documents), a character vector</p></li>
+<li><p><code>dwpi_family_kind</code> Document kind codes for DWPI Family members, 42 kind codes (94% of documents), a character vector</p></li>
+<li><p><code>dwpi_family_numbers</code> DWPI family members, 31007 numbers (94% of documents), a character vector</p></li>
+<li><p><code>first_claim</code> The first claim in a patent document, 15376 first claims (97% of documents), a character vector</p></li>
+<li><p><code>inpadoc_family_members</code> INPADOC Family Members in long format with dates, 49625 numbers (97% of documents), a character vector</p></li>
+<li><p><code>inpadoc_first_family_member</code> The earliest publication number in the <code>inpadoc_family_members</code> based on the date, 9,020 numbers (98% of documents), a character vector</p></li>
+<li><p><code>inventor</code> The original inventor name, 19630 names (94% of documents), a character vector</p></li>
+<li><p><code>ipc</code> International Patent Classification - IPC - codes, 8727 codes (98% of documents), a character vector</p></li>
+</ul>
+<p><code>priority_number</code> Patent priority numbers in long for with dates, 23382 numbers (99% of documents), a character vector</p>
+<ul>
+<li><p><code>publication_number</code> Publication numbers in short form minus dates, 18970 numbers (100% of documents), a character vector</p></li>
+<li><p><code>publication_year</code> The year of publication of the publication numbers, 145 years (99% of documents), a character vector</p></li>
+<li><p><code>related_application_numbers</code> Details of related patent applications, 7906 numbers (38% of documents), a character vector</p></li>
+<li><p><code>title_english</code> The English title, 11113 documents (99% percent of documents), a character vector</p></li>
+<li><p><code>title_original</code> The original title, normally concatenated as English, French, German etc., 14324 titles (97% percent of documents), a character vector</p></li>
+</ul>
+<p>Note that the coverage of each field typically does not add up to 100 percent of the documents. These numbers and percentages are provided above to help you work out what to expect when working with a specific field based on processing of the raw data in VantagePoint from Search Technology Inc. When working with these reference numbers it should be noted that the percentages are approximate. If you find that the numbers vary by more than between 2 and 10 records then you should cross check your approach to the data. This will commonly arise where white space is not trimmed after deconcatenating the data. For R users it is possible that foreign characters are present in the main text fields. In the event you run into problems please raise an issue and provide details of the problem.</p>
 </div>
 <div id="things-you-need-to-know" class="section level3">
 <h3 class="hasAnchor">
