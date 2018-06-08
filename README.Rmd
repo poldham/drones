@@ -78,7 +78,7 @@ A data frame with 18,970 observations of 22 variables:
 
 - `citing_patents` Patents citing one or more documents, 79406 citing numbers (39% of documents), a character vector
 
-- `cpc` The Cooperative Patent Classification Codes, 17077 cpc codes (93% of documents), a character vector
+- `cpc` The Cooperative Patent Classification Codes (CPC), 17077 CPC codes (93% of documents), a character vector
 
 - `dwpi_family_dates` Family dates for DWPI family numbers (Derwent World Patent Index), 5154 dates (94% of documents), a character vector
 
@@ -94,9 +94,9 @@ A data frame with 18,970 observations of 22 variables:
 
 - `inventor` The original inventor name, 19630 names (94% of documents), a character vector
 
-- `ipc` International Patent Classification - IPC - codes, 8727 codes (98% of documents), a character vector
+- `ipc` International Patent Classification (IPC) codes, 8727 codes (98% of documents), a character vector
 
-`priority_number` Patent priority numbers in long for with dates, 23382 numbers (99% of documents), a character vector
+- `priority_number` Patent priority numbers in long for with dates, 23382 numbers (99% of documents), a character vector
 
 - `publication_number` Publication numbers in short form minus dates, 18970 numbers (100% of documents), a character vector
 
