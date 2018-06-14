@@ -1,0 +1,2 @@
+1. fuzzy match group applicant names where they share and a priority number 7,746 to 6,942. Manual review and US govt grouped on department
+2. fuzzy match groyp applicant names where they share an inpadoc family member number 6,942 to 6,929

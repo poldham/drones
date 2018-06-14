@@ -1,14 +1,15 @@
 #' @title Access the drones patent dataset
-#' @description A set of 18,970 patent publications containing the word drone or drones published between 1845 and the 2nd of November 2017 from Clarivate Analytics Derwent Innovation database.
-#' @details Patent data fields are commonly concatenated with a semicolon and require tidying for accurate counts. The cited_nonpatent field in this dataset contains irrelevant legal status information and is messy.
-#' @return data.frame
-#' @usage  data("drones")
+#' @description A set of 18,970 patent publications containing the word drone or drones published between 1845 and the 2nd of November 2017 from the \href{https://clarivate.com/products/derwent-innovation/}{Clarivate Analytics Derwent Innovation} database.
+#' @details Patent data fields are commonly concatenated with a semicolon and require tidying for accurate counts. The cited_nonpatent field in this dataset contains irrelevant legal status information and is messy. Applicant names (assignees) were cleaned using VantagePoint by fuzzy matching names grouped on the priority number followed by manual review. In the second step the cleaned data was fuzzy match grouped on the INPADOC family member number.
+#' @usage data("drones")
+#' @aliases drones
 #' @format{ A data frame with 18,970 observations of 22 variables:
 #'  \describe{
 #'    \item{\code{abstract}}{The original document abstract, 12798 93 percent of documents, a character vector}
 #'    \item{\code{abstract_english}}{The english document abstract, 12295 94 percent of documents, a character vector}
 #'    \item{\code{application_number}}{The long application number including the date, 15776 100 percent of documents, a character vector}
-#'    \item{\code{assignee}}{The original applicant or assignee name, 7746 89 percent of documents, a character vector}
+#'    \item{\code{applicant}}{The patent applicant name, also known as the assignee name, 7746 89 percent of documents, a character vector}
+#'    \item{\code{applicant_cleaned}}{A cleaned version of the applicant name, 6,929 names, a character vector}
 #'    \item{\code{cited_nonpatent}}{Literature citations, field is noisy, 29599, 36 percent of documents, a character vector}
 #'    \item{\code{cited_patents}}{Patents cited in one or more documents, 93769 39 percent of documents, a character vector}
 #'    \item{\code{citing_patents}}{Patents citing one or more documents, 79406 39 percent of documents, a character vector}
@@ -30,6 +31,5 @@
 #'
 #'  }
 #' }
-#' @source Clarivate Analytics Derwent Innovation database
-#' @examples {data(drones)}
+#' @source \href{https://clarivate.com/products/derwent-innovation/}{Clarivate Analytics Derwent Innovation} database
 "drones"

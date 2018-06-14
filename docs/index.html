@@ -69,12 +69,7 @@
     
 
 <hr>
-<hr>
-<p><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></p>
-<hr>
-<p><a href="https://cran.r-project.org/"><img src="https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg" alt="minimal R version"></a> <a href="https://cran.r-project.org/package=drones"><img src="http://www.r-pkg.org/badges/version/drones" alt="CRAN_Status_Badge"></a> <a href="commits/master"><img src="https://img.shields.io/badge/Package%20version-0.0.0.9000-orange.svg?style=flat-square" alt="packageversion"></a></p>
-<hr>
-<p><a href="/commits/master"><img src="https://img.shields.io/badge/last%20change-2018--06--08-yellowgreen.svg" alt="Last-changedate"></a></p>
+<p><a href="/commits/master"><img src="https://img.shields.io/badge/last%20change-2018--06--14-yellowgreen.svg" alt="Last-changedate"></a></p>
 <div id="the-drones-patent-dataset" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#the-drones-patent-dataset" class="anchor"></a>The Drones Patent Dataset</h1></div>
@@ -106,10 +101,11 @@
 <li><p><code>abstract_english</code> The English document abstract, 12295 English abstracts (94% of documents), a character vector</p></li>
 <li><p><code>application_number</code> The long application number including the date, 15776 numbers (100% of documents), a character vector</p></li>
 <li><p><code>assignee</code> The original applicant or assignee name, 7746 raw names, (89% of documents), a character vector</p></li>
+<li><p><code>applicant_cleaned</code> A cleaned version of the applicant name, 6929 cleaned names, a character vector</p></li>
 <li><p><code>cited_nonpatent</code> Literature citations, field is noisy, 29599 references (36% of documents), a character vector</p></li>
 <li><p><code>cited_patents</code> Patents cited in one or more documents, 93769 cited numbers (39% percent of documents), a character vector</p></li>
 <li><p><code>citing_patents</code> Patents citing one or more documents, 79406 citing numbers (39% of documents), a character vector</p></li>
-<li><p><code>cpc</code> The Cooperative Patent Classification Codes, 17077 cpc codes (93% of documents), a character vector</p></li>
+<li><p><code>cpc</code> The Cooperative Patent Classification Codes (CPC), 17077 CPC codes (93% of documents), a character vector</p></li>
 <li><p><code>dwpi_family_dates</code> Family dates for DWPI family numbers (Derwent World Patent Index), 5154 dates (94% of documents), a character vector</p></li>
 <li><p><code>dwpi_family_kind</code> Document kind codes for DWPI Family members, 42 kind codes (94% of documents), a character vector</p></li>
 <li><p><code>dwpi_family_numbers</code> DWPI family members, 31007 numbers (94% of documents), a character vector</p></li>
@@ -117,7 +113,7 @@
 <li><p><code>inpadoc_family_members</code> INPADOC Family Members in long format with dates, 49625 numbers (97% of documents), a character vector</p></li>
 <li><p><code>inpadoc_first_family_member</code> The earliest publication number in the <code>inpadoc_family_members</code> based on the date, 9,020 numbers (98% of documents), a character vector</p></li>
 <li><p><code>inventor</code> The original inventor name, 19630 names (94% of documents), a character vector</p></li>
-<li><p><code>ipc</code> International Patent Classification - IPC - codes, 8727 codes (98% of documents), a character vector</p></li>
+<li><p><code>ipc</code> International Patent Classification (IPC) codes, 8727 codes (98% of documents), a character vector</p></li>
 <li><p><code>priority_number</code> Patent priority numbers in long for with dates, 23382 numbers (99% of documents), a character vector</p></li>
 <li><p><code>publication_number</code> Publication numbers in short form minus dates, 18970 numbers (100% of documents), a character vector</p></li>
 <li><p><code>publication_year</code> The year of publication of the publication numbers, 145 years (99% of documents), a character vector</p></li>
@@ -179,14 +175,18 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Paul Oldham <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Paul Oldham <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-1013-4390" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" height="16"></a> </li>
 </ul>
 </div>
 
       <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/search/search"><img src="https://travis-ci.org/search/search.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://travis-ci.org/poldham/drones"><img src="https://travis-ci.org/poldham/drones.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
+<li><a href="https://cran.r-project.org/"><img src="https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg" alt="minimal R version"></a></li>
+<li><a href="https://cran.r-project.org/package=drones"><img src="http://www.r-pkg.org/badges/version/drones" alt="CRAN_Status_Badge"></a></li>
+<li><a href="commits/master"><img src="https://img.shields.io/badge/Package%20version-0.0.0.9000-orange.svg?style=flat-square" alt="packageversion"></a></li>
 </ul>
 </div>
 </div>
