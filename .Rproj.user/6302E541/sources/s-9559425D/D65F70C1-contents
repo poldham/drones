@@ -1,5 +1,6 @@
-imgurl <- "/Users/pauloldham17inch/Desktop/drones.png"
-sticker(imgurl, package="hexSticker", p_size=8, s_x=1, s_y=.75, s_width=.6,
+library(hexSticker)
+imgurl <- "https://raw.githubusercontent.com/poldham/drones/master/drone.png"
+sticker(imgurl, package="Drones", p_size=8, s_x=1, s_y=.75, s_width=.6,
         filename="imgfile.png")
 
 
