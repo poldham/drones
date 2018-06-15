@@ -4,21 +4,22 @@ author: "Paul Oldham"
 date: "08/06/2018"
 output: html_document
 ---
+<img src="man/figures/logo.png" align="left" />
+---
 [![Build Status](https://travis-ci.org/poldham/drones.svg?branch=master)](https://travis-ci.org/poldham/drones)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg)](https://cran.r-project.org/)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/drones)](https://cran.r-project.org/package=drones)
 [![packageversion](https://img.shields.io/badge/Package%20version-0.0.0.9000-orange.svg?style=flat-square)](commits/master)
- 
----
- 
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, cache = TRUE)
 ```
 
-# The Drones Patent Dataset
+---
+
+#   The Drones Patent Dataset
 
 The drones patent dataset is a dataset of 18,970 patent publications that refer to the word drone or drones somewhere in the text. The dataset is based on a search of patent documents from the main patent jurisdictions for the period 1845 to early November 2017 using the [Clarivate Analytics Derwent Innovation](https://clarivate.com/products/derwent-innovation/) database. The dataset is intended for use in training in patent analytics as described on the [WIPO analytics](https://github.com/wipo-analytics) home page and is deliberately noisy. While this is live valid data, it is not intended to be used to make definitive statements about patent activity for drone technology and is not expected to be complete. The drones patent dataset is part of work in progress on the WIPO Patent Analytics Handbook. 
 
@@ -117,13 +118,19 @@ Load the library
 library(tidyverse)
 ```
 
-Let's separate out the applicant (assignee) field and then count it up:
+To demonstrate this let's separate out the applicant (assignee) field and then count it up:
 
 ```{r}
-applicant <- drones %>% 
-  separate_rows(assignee, sep = ";") %>%
-  mutate(assignee = str_trim(.$assignee, side = "both"))
+applicants <- drones::applicants %>% 
+  separate_rows(applicant_cleaned, sep = ";") %>%
+  mutate(applicant_cleaned = str_trim(applicant_cleaned, side = "both")) %>% 
+  drop_na(applicant_cleaned) # drop not available entries
 
-applicant %>% count(assignee, sort = TRUE)
+applicants %>% count(applicant_cleaned, sort = TRUE)
 ```
 
+We'll add more to the package by the way of guides and examples as we develop it. For the moment this helps to get you started. 
+
+### Attribution
+
+The lovely looking drone icon for the package was made by [Nikita Golubev](https://www.flaticon.com/authors/nikita-golubev) from www.flaticon.com 
