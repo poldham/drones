@@ -46,7 +46,7 @@ devtools::install_github("wipo-analytics/drones")
 library(drones)
 ```
 
-### Download the Raw dataset
+### Download for use outside RStudio
 
 If you want to work outside RStudio you can download the dataset reference file as a zip file containing the data in .csv format [here](https://storage.googleapis.com/owa/drones.zip).
 
