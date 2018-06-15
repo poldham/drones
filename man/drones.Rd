@@ -9,8 +9,8 @@
    \item{\code{abstract}}{The original document abstract, 12798 93 percent of documents, a character vector}
    \item{\code{abstract_english}}{The english document abstract, 12295 94 percent of documents, a character vector}
    \item{\code{application_number}}{The long application number including the date, 15776 100 percent of documents, a character vector}
-   \item{\code{applicant}}{The patent applicant name, also known as the assignee name, 7746 89 percent of documents, a character vector}
-   \item{\code{applicant_cleaned}}{A cleaned version of the applicant name, 6,929 names, a character vector}
+   \item{\code{applicants}}{The patent applicant name, also known as the assignee name, 7746 89 percent of documents, a character vector}
+   \item{\code{applicants_cleaned}}{A cleaned version of the applicant name, 6,929 names, a character vector}
    \item{\code{cited_nonpatent}}{Literature citations, field is noisy, 29599, 36 percent of documents, a character vector}
    \item{\code{cited_patents}}{Patents cited in one or more documents, 93769 39 percent of documents, a character vector}
    \item{\code{citing_patents}}{Patents citing one or more documents, 79406 39 percent of documents, a character vector}
@@ -21,7 +21,7 @@
    \item{\code{first_claim}}{The first claim in a patent document, 15376 97 percent of documents, a character vector}
    \item{\code{inpadoc_family_members}}{INPADOC Family Members in long format with dates, 49625 97 percent of documents, a character vector}
    \item{\code{inpadoc_first_family_member}}{The earliest publication number in the inpadoc_family_members based on the date, 9,020, 98 percent of documents, a character vector}
-   \item{\code{inventor}}{The original inventor name, 19630 94 percent of documents, a character vector}
+   \item{\code{inventors}}{The original inventor name, 19630 94 percent of documents, a character vector}
    \item{\code{ipc}}{International Patent Classification - IPC - codes, 8727 98 percent of documents, a character vector}
    \item{\code{priority_number}}{Patent priority numbers in long format with dates, 23382 99 percent of documents, a character vector}
    \item{\code{publication_number}}{Publication numbers in short form minus dates, 18970 100 percent of documents, a character vector}
@@ -42,6 +42,6 @@ data("drones")
 A set of 18,970 patent publications containing the word drone or drones published between 1845 and the 2nd of November 2017 from the \href{https://clarivate.com/products/derwent-innovation/}{Clarivate Analytics Derwent Innovation} database.
 }
 \details{
-Patent data fields are commonly concatenated with a semicolon and require tidying for accurate counts. The cited_nonpatent field in this dataset contains irrelevant legal status information and is messy. Applicant names (assignees) were cleaned using VantagePoint by fuzzy matching names grouped on the priority number followed by manual review. In the second step the cleaned data was fuzzy match grouped on the INPADOC family member number.
+Field names in this dataset have been simplified from their original long form to make them easier to work with in R. Patent data fields are commonly concatenated with a semicolon and require tidying for accurate counts. The cited_nonpatent field in this dataset contains irrelevant legal status information and is messy. Applicant names (assignees) were cleaned using VantagePoint by fuzzy matching names grouped on the priority number followed by manual review. In the second step the cleaned data was fuzzy match grouped on the INPADOC family member number.
 }
 \keyword{datasets}

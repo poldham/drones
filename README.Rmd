@@ -104,7 +104,7 @@ A data frame with 18,970 observations of 22 variables:
 
 Note that the coverage of each field typically does not add up to 100 percent of the documents. These numbers and percentages are provided above to help you work out what to expect when working with a specific field based on processing of the raw data in VantagePoint from Search Technology Inc. When working with these reference numbers it should be noted that the percentages are approximate. If you find that the numbers vary by more than between 2 and 10 records then you should cross check your approach to the data. This will commonly arise where white space is not trimmed after deconcatenating the data. For R users it is possible that foreign characters are present in the main text fields. In the event you run into problems please raise an issue and provide details of the problem. 
 
-### Things you need to know
+### How to separate concatenated columns
 
 Patent data is not tidy. Many of the columns contain data that is concatenated (joined) with a semicolon as a delimeter. This means that in order to access the data for counting you will need to separate the data onto the relevant row and you will also need to trim the data. You can do this easily with the tidyverse packages.
 
@@ -128,6 +128,17 @@ applicants <- drones::applicants %>%
 
 applicants %>% count(applicant_cleaned, sort = TRUE)
 ```
+
+If you wanted to run the same operation as a reusable function you could use this. Note that this has been adapted for tidy evaluation. In some fields it will be common for NA (not available) to appear prominently. Consider adding `dplyr::drop_na` to address these cases.
+
+```{r}
+separate_rows_trim <- function(df, col, sep){
+  df %>% tidyr::separate_rows(col, sep = sep) %>% 
+    dplyr::mutate(!!col := stringr::str_trim(.[[col]], side = "both")) %>% 
+    dplyr::count(!!col := .[[col]], sort = TRUE)
+}
+```
+
 
 We'll add more to the package by the way of guides and examples as we develop it. For the moment this helps to get you started. 
 
