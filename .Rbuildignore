@@ -3,7 +3,7 @@
 ^.travis\.yml
 ^README\.Rmd
 ^README_cache
-^data-raw
+data-raw
 ^docs
 ^logo\.png
 ^dron\.png
