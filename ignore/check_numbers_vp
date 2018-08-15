@@ -1,0 +1,21 @@
+15776 application numbers in VP = OK
+23,239 priority numbers in VP = 23,847 in R before removal of white space. 23,380 after the removal of white space. So I have 141 priorities too many compared with VP. That arises from NAs in the priority number field. When those are removed the sum is correct.
+
+numbers %>%
+separate_rows(priority_number, sep = ";") %>%
+mutate(priority_number = str_trim(priority_number, side = "both")) %>%
+mutate(duplicated = duplicated(priority_number)) %>%
+filter(duplicated == FALSE) %>%
+drop_na(priority_number) %>%
+nrow()
+
+publication number = 15776
+inpadoc_family_members = 49,625. When duplicates are removed and NAs are dropped the numbers match.
+
+numbers %>%
+separate_rows(inpadoc_family_members, sep = ";") %>%
+mutate(inpadoc_family_members = str_trim(inpadoc_family_members, side = "both")) %>%
+mutate(duplicated = duplicated(inpadoc_family_members)) %>%
+filter(duplicated == FALSE) %>%
+drop_na(inpadoc_family_members) %>%
+nrow()
