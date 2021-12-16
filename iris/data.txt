@@ -1,0 +1,16 @@
+path:
+- data.csv
+- data.rds
+type: table
+description: The iris data set
+rows: 150
+cols: 5
+columns:
+  Sepal.Length: numeric
+  Sepal.Width: numeric
+  Petal.Length: numeric
+  Petal.Width: numeric
+  Species: factor
+filenames:
+  data.csv: data.csv
+  data.rds: data.rds
